@@ -131,7 +131,7 @@
 
       <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
         A structured natural language that compiles to React, Laravel Blade, or HTML.
-        One <code class="text-brand-300 font-mono text-base">.eng</code> file. Any framework. Production-ready output.
+        One <code class="text-brand-300 font-mono text-base">.eng</code> file. Any framework. Code output quality depends on the LLM you choose.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -297,7 +297,7 @@
             <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
           </div>
           <h3 class="font-semibold text-white mb-2">LLM-Powered Compiler</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">Uses Claude, GPT, Gemini, or your local CLI. Smart prompt engineering produces production-ready code.</p>
+          <p class="text-sm text-slate-400 leading-relaxed">Uses Claude, GPT, Gemini, or your local CLI. doteng gives the LLM structured, unambiguous intent &mdash; output is only as good as the model behind it.</p>
         </div>
 
         <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800/50 hover:border-slate-700/50 transition-all group">
@@ -332,7 +332,7 @@
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">How It Works</h2>
-        <p class="text-slate-400">Three stages. Deterministic parsing. LLM-powered compilation.</p>
+        <p class="text-slate-400">Deterministic parsing. Non-deterministic code generation. Be aware of the difference.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
@@ -357,12 +357,18 @@
             <span class="font-mono font-bold text-emerald-400 text-lg">3</span>
           </div>
           <h3 class="font-semibold text-white mb-2">Compile</h3>
-          <p class="text-sm text-slate-400 leading-relaxed">The AST + target + theme config are sent to an LLM with framework-specific instructions. Real, runnable code comes out.</p>
+          <p class="text-sm text-slate-400 leading-relaxed">The AST + target + theme config are sent to an LLM. doteng structures the prompt &mdash; the LLM generates the code. Output quality varies by model.</p>
         </div>
       </div>
 
       <div class="mt-12 flex justify-center">
         <img src="https://raw.githubusercontent.com/dotenglang/doteng/master/assets/pipeline.png" alt="doteng compilation pipeline diagram" class="rounded-2xl border border-slate-800/50 max-w-full" loading="lazy" />
+      </div>
+
+      <div class="mt-12 max-w-3xl mx-auto p-5 rounded-2xl bg-amber-950/20 border border-amber-800/30">
+        <p class="text-sm text-amber-200/80 leading-relaxed">
+          <strong class="text-amber-200">A note on output quality:</strong> doteng's parser is fully deterministic &mdash; same <code class="font-mono">.eng</code> file always produces the same AST. But the final code generation step is powered by an LLM, which means output can vary between runs, models, and providers. Think of doteng as a structured way to prompt &mdash; not a traditional compiler with guaranteed output. Better models produce better code.
+        </p>
       </div>
     </div>
   </section>
@@ -372,7 +378,7 @@
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Compile To Anything</h2>
-        <p class="text-slate-400">Same source. Multiple frameworks. Real output.</p>
+        <p class="text-slate-400">Same source. Multiple frameworks. Output quality depends on the model.</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
