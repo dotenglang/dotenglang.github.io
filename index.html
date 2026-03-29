@@ -115,8 +115,14 @@
     <div class="relative max-w-4xl mx-auto px-6 text-center">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/60 border border-slate-700/50 text-sm text-slate-300 mb-8">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        v0.1.1 &mdash; Now on npm
+        <span id="npm-version">loading...</span> &mdash; Now on npm
       </div>
+      <script>
+        fetch('https://registry.npmjs.org/@dotenglang/doteng/latest')
+          .then(r => r.json())
+          .then(d => document.getElementById('npm-version').textContent = 'v' + d.version)
+          .catch(() => document.getElementById('npm-version').textContent = 'v0.1.2');
+      </script>
 
       <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6">
         Write <span class="gradient-text">English</span>.<br/>
